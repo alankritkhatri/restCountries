@@ -55,12 +55,13 @@ const getCountriesdata = function (countryName) {
     .then(function (data) {
       const countriesData = data[0];
 
-      const searchedCountry = `    <div class="countries-section">
-        <div class="country-map"> <img src=${countriesData.flags.png}></div>
-        <div class="country-name">${countriesData.name.common}</divs.png>
-        <div class="population">${countriesData.population}</div>
-        <div class="region">${countriesData.region}</div>
-        <div class="capital">${countriesData.capital}</div>
+      const searchedCountry = `<div class="country-map">
+        <img src="${countriesData.flags.png}" alt="" />
+        </div>
+        <div class="country-details">
+          <h1 class="population">Population ${countriesData.population}</h1>
+          <h1 class="region">Region:${countriesData.region}</h1>
+          <h1 class="capital">Capital ${countriesData.capital}</h1>
       </div>`;
       let countryCounter = 1;
       const hi = document.createElement("div");
@@ -71,6 +72,13 @@ const getCountriesdata = function (countryName) {
 };
 
 input.onsearch = () => {
-  countriesSection.innerHTML = "";
-  getCountriesdata(input.value);
+  if (/\s/.test(input.value) || input.value === "") {
+    countriesSection.innerHTML = "";
+    for (var i = 0; i < 10; i++) {
+      randomCountryPicker();
+    }
+  } else {
+    countriesSection.innerHTML = "";
+    getCountriesdata(input.value);
+  }
 };
