@@ -31,7 +31,7 @@
   outline: 0;
 }
 .region-selector {
-  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.223);
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.27);
   width: 50%;
   margin: 1rem;
   padding: 0.7rem;
@@ -43,4 +43,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.countries-section {
+  display: flex;
+  flex-direction: column;
+
+  width: 80%;
+  margin: auto;
+}
+.country-1 {
+  margin: 20px auto;
+  border-radius: 5px 5px 0px 0px;
+  width: 90%;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.27);
+}
+.country-map img {
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+}
+.country-details {
+  padding: 15px 0px 50px 15px;
 }
