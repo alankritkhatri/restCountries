@@ -2,6 +2,7 @@
 const regionSelector = document.querySelector(".region-selector");
 const input = document.getElementById("myInput");
 const countriesSection = document.querySelector(".countries-section");
+const regionList = document.querySelector(".region-list");
 
 const loadDefaultCountries = function (countryName) {
   const request = fetch(`https://restcountries.com/v3.1/name/${countryName}`)
@@ -16,6 +17,7 @@ const loadDefaultCountries = function (countryName) {
         <img src="${countriesData.flags.png}" alt="" />
         </div>
         <div class="country-details">
+             <h1 class="country-name">${countriesData.name.common}</h1>
           <h1 class="population">Population ${countriesData.population}</h1>
           <h1 class="region">Region:${countriesData.region}</h1>
           <h1 class="capital">Capital ${countriesData.capital}</h1>
@@ -59,6 +61,7 @@ const getCountriesdata = function (countryName) {
         <img src="${countriesData.flags.png}" alt="" />
         </div>
         <div class="country-details">
+        <h1 class="country-name">${countriesData.name.common}</h1>
           <h1 class="population">Population ${countriesData.population}</h1>
           <h1 class="region">Region:${countriesData.region}</h1>
           <h1 class="capital">Capital ${countriesData.capital}</h1>
@@ -82,3 +85,6 @@ input.onsearch = () => {
     getCountriesdata(input.value);
   }
 };
+regionSelector.addEventListener("click", function () {
+  regionList.classList.toggle("flex");
+});
