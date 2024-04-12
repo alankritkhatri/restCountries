@@ -10,7 +10,7 @@ const loadDefaultCountries = function (countryName) {
       return data.json();
     })
     .then(function (data) {
-      const countriesData = data[0];
+      const countriesData = data[0]
       let counter = 1;
       const countryGen = `
         <div class="country-map">
@@ -56,7 +56,7 @@ const getCountriesdata = function (countryName) {
     })
     .then(function (data) {
       const countriesData = data[0];
-
+alert(counties data)
       const searchedCountry = `<div class="country-map">
         <img src="${countriesData.flags.png}" alt="" />
         </div>
