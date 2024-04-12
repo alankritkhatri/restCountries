@@ -56,7 +56,7 @@ const getCountriesdata = function (countryName) {
     })
     .then(function (data) {
       const countriesData = data[0];
-alert(counties data)
+alert(countriesData)
       const searchedCountry = `<div class="country-map">
         <img src="${countriesData.flags.png}" alt="" />
         </div>
