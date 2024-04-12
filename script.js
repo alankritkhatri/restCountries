@@ -75,8 +75,9 @@ const getCountriesdata = function (countryName) {
 };
 
 input.onsearch = () => {
-  if (/\s/.test(input.value) || input.value === "") {
+  if (/^\s*$/.test(input.value.trim())) {
     countriesSection.innerHTML = "";
+
     for (var i = 0; i < 10; i++) {
       randomCountryPicker();
     }
@@ -85,6 +86,7 @@ input.onsearch = () => {
     getCountriesdata(input.value);
   }
 };
+
 regionSelector.addEventListener("click", function () {
-  regionList.classList.toggle("flex");
+  regionList.classList.toggle("block");
 });
